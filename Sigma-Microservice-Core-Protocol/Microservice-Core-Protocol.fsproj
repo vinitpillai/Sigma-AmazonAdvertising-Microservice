@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>df377465-9884-43bd-a475-10ea79e9429e</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Microservice_Core_Protocol</RootNamespace>
+    <AssemblyName>Microservice-Core-Protocol</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFSharpCoreVersion>4.3.1.0</TargetFSharpCoreVersion>
+    <Name>Microservice-Core-Protocol</Name>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">.\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <Tailcalls>false</Tailcalls>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <WarningLevel>3</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <Tailcalls>true</Tailcalls>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <WarningLevel>3</WarningLevel>
+    <DocumentationFile>bin\Release\Microservice_Core_Protocol.XML</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DogStatsD-CSharp-Client">
+      <HintPath>..\packages\DogStatsD-CSharp-Client.3.0.0\lib\netstandard1.3\DogStatsD-CSharp-Client.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="mscorlib" />
+    <Reference Include="FSharp.Core, Version=$(TargetFSharpCoreVersion), Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>$(SolutionDir)\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RabbitMQ.Client">
+      <HintPath>$(SolutionDir)\packages\RabbitMQ.Client.3.6.2\lib\net45\RabbitMQ.Client.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Numerics" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Protocol.fs" />
+    <Compile Include="Assembly.fs" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Sigma-Lib-Lists\Sigma-Lib-Lists.fsproj">
+      <Name>Sigma-Lib-Lists</Name>
+      <Project>{8c8e1b95-f01b-48bd-b792-370efb1f6270}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\Sigma-Lib-Union\Sigma-Lib-Union.fsproj">
+      <Name>Sigma-Lib-Union</Name>
+      <Project>{952bd405-a3dc-4ac1-9cc6-99ecd8a11f1a}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\Sigma-RabbitMQ-Interface\RabbitMQ-Interface.fsproj">
+      <Name>RabbitMQ-Interface</Name>
+      <Project>{4aeb4f4b-5bce-4bfd-a07b-c6ecc3d8ff79}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\Sigma-Types-API-Microservices\Sigma-Types-API-Microservices.fsproj">
+      <Name>Sigma-Types-API-Microservices</Name>
+      <Project>{e9d49c63-dec8-40b0-a2e7-d7d005893091}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\Sigma-Types-DataDog\Sigma-Types-DataDog.fsproj">
+      <Name>Sigma-Types-DataDog</Name>
+      <Project>{89d14ca2-45e0-4797-9733-6ff74187a773}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\Sigma-Types-Job\Sigma-Types-Job.fsproj">
+      <Name>Sigma-Types-Job</Name>
+      <Project>{30dca0da-0e1e-43fe-a6e4-f7d1c8a051dd}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\Sigma-Types-Protocol\Sigma-Types-Protocol.fsproj">
+      <Name>Sigma-Types-Protocol</Name>
+      <Project>{8efbe121-70c0-4c19-9ebc-b836d16f769f}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <MinimumVisualStudioVersion Condition="'$(MinimumVisualStudioVersion)' == ''">11</MinimumVisualStudioVersion>
+  </PropertyGroup>
+  <Choose>
+    <When Condition="'$(VisualStudioVersion)' == '11.0'">
+      <PropertyGroup Condition="Exists('$(MSBuildExtensionsPath32)\..\Microsoft SDKs\F#\3.0\Framework\v4.0\Microsoft.FSharp.Targets')">
+        <FSharpTargetsPath>$(MSBuildExtensionsPath32)\..\Microsoft SDKs\F#\3.0\Framework\v4.0\Microsoft.FSharp.Targets</FSharpTargetsPath>
+      </PropertyGroup>
+    </When>
+    <Otherwise>
+      <PropertyGroup Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\FSharp\Microsoft.FSharp.Targets')">
+        <FSharpTargetsPath>$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\FSharp\Microsoft.FSharp.Targets</FSharpTargetsPath>
+      </PropertyGroup>
+    </Otherwise>
+  </Choose>
+  <Import Project="$(FSharpTargetsPath)" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

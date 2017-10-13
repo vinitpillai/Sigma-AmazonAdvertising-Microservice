@@ -1,0 +1,30 @@
+[submodule "Sigma-RabbitMQ-Interface"]
+	path = Sigma-RabbitMQ-Interface
+	url = git@github.com:360iLondon/Sigma-RabbitMQ-Interface.git
+[submodule "Sigma-Microservice-Core-Protocol"]
+	path = Sigma-Microservice-Core-Protocol
+	url = git@github.com:360iLondon/Sigma-Microservice-Core-Protocol.git
+[submodule "Sigma-Lib-Lists"]
+	path = Sigma-Lib-Lists
+	url = git@github.com:360iLondon/Sigma-Lib-Lists.git
+[submodule "Sigma-Lib-Union"]
+	path = Sigma-Lib-Union
+	url = git@github.com:360iLondon/Sigma-Lib-Union.git
+[submodule "Sigma-Types-API-Microservices"]
+	path = Sigma-Types-API-Microservices
+	url = git@github.com:360iLondon/Sigma-Types-API-Microservices.git
+[submodule "Sigma-Types-DataDog"]
+	path = Sigma-Types-DataDog
+	url = git@github.com:360iLondon/Sigma-Types-DataDog.git
+[submodule "Sigma-Types-Job"]
+	path = Sigma-Types-Job
+	url = git@github.com:360iLondon/Sigma-Types-Job.git
+[submodule "Sigma-Types-Protocol"]
+	path = Sigma-Types-Protocol
+	url = git@github.com:360iLondon/Sigma-Types-Protocol.git
+[submodule "Sigma-Lib-Hashing"]
+	path = Sigma-Lib-Hashing
+	url = git@github.com:360iLondon/Sigma-Lib-Hashing.git
+[submodule "Sigma-Lib-Riak"]
+	path = Sigma-Lib-Riak
+	url = git@github.com:360iLondon/Sigma-Lib-Riak.git

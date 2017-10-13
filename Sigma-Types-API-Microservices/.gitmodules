@@ -1,0 +1,3 @@
+[submodule "Sigma-Types-Protocol"]
+	path = Sigma-Types-Protocol
+	url = git@github.com:360iLondon/Sigma-Types-Protocol.git
